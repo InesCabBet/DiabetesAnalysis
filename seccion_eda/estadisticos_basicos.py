@@ -20,7 +20,7 @@ st.markdown("### Datos sobre el dataset")
 st.dataframe(df.describe().T)
 
 st.markdown("### Distribución de las variables")
-cols = st.columns()
+cols = st.columns(7)
 
 with cols[0]:
     fig, ax = plt.subplots()
