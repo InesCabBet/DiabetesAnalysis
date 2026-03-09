@@ -20,7 +20,7 @@ st.markdown("### Datos sobre el dataset")
 st.dataframe(df.describe().T)
 
 st.markdown("### Distribución de las variables")
-cols = st.columns(7)
+cols = st.columns(3)
 
 with cols[0]:
     fig, ax = plt.subplots()
@@ -48,19 +48,19 @@ with cols[3]:
 
 st.markdown("---")
 
-with cols[4]:
+with cols[0]:
     fig, ax = plt.subplots()
     sns.histplot(df['Insulin'], kde=True)
     plt.title("Distribución de Insulina")
     st.pyplot(fig)
 
-with cols[5]:
+with cols[1]:
     fig, ax = plt.subplots()
     sns.histplot(df['BMI'], kde=True)
     plt.title("Distribución de BMI")
     st.pyplot(fig)
 
-with cols[6]:
+with cols[2]:
     fig, ax = plt.subplots()
     sns.histplot(df['DiabetesPedigreeFunction'], kde=True)
     plt.title("Distribución de DiabetesPedigreeFunction")
@@ -68,8 +68,10 @@ with cols[6]:
 
 st.markdown("---")
 
-with cols[7]:
+cols_target, = st.columns(1)
+
+with cols_target:
     fig, ax = plt.subplots()
     sns.histplot(df['Age'], kde=True)
-    plt.title("Distribución de Edad")
+    plt.title('Distribucion de edad')
     st.pyplot(fig)
