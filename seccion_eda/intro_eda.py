@@ -10,4 +10,5 @@ El objetivo de esta sección es entender los datos, qué nos cuentan
 Limpiar los datos en caso de ruido, para que el modelo tenga datos relevantes
 """)
 
-pd.read_csv("diabetes.csv")
+df = pd.read_csv("diabetes.csv")
+df.head()
