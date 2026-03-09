@@ -40,38 +40,39 @@ with cols[2]:
     plt.title("Distribución de Presión en Sangre")
     st.pyplot(fig)
 
-with cols[3]:
+st.markdown("---")
+cols = st.columns(3)
+with cols[0]:
     fig, ax = plt.subplots()
     sns.histplot(df['SkinThickness'], kde=True)
     plt.title("Distribución de SkinThickness")
     st.pyplot(fig)
 
-st.markdown("---")
 
-with cols[0]:
+with cols[1]:
     fig, ax = plt.subplots()
     sns.histplot(df['Insulin'], kde=True)
     plt.title("Distribución de Insulina")
     st.pyplot(fig)
 
-with cols[1]:
+with cols[2]:
     fig, ax = plt.subplots()
     sns.histplot(df['BMI'], kde=True)
     plt.title("Distribución de BMI")
     st.pyplot(fig)
 
-with cols[2]:
+st.markdown("---")
+cols = st.columns(3)
+
+with cols[0]:
     fig, ax = plt.subplots()
     sns.histplot(df['DiabetesPedigreeFunction'], kde=True)
     plt.title("Distribución de DiabetesPedigreeFunction")
     st.pyplot(fig)
 
-st.markdown("---")
-
-cols_target, = st.columns(1)
-
-with cols_target:
+with cols[1]:
     fig, ax = plt.subplots()
     sns.histplot(df['Age'], kde=True)
-    plt.title('Distribucion de edad')
+    plt.title("Distribución de Edad")
     st.pyplot(fig)
+
