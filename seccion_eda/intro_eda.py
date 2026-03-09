@@ -11,10 +11,29 @@ El objetivo de esta sección es entender los datos, qué nos cuentan.
 Limpiar los datos en caso de ruido, para que el modelo tenga datos relevantes
 """)
 
+st.markdown("## **Descripción de las variables del dataset**")
+st.markdown("""
+- **Pregnancies** → Número de embarazos que ha tenido la persona. Cambios hormonales y metabólicos durante el embarazo pueden influir en el riesgo de desarrollar diabetes.
+
+- **Glucose** → Nivel de glucosa en sangre. Es uno de los indicadores más importantes, ya que niveles elevados de glucosa suelen estar directamente relacionados con la diabetes.
+
+- **BloodPressure** → Presión arterial diastólica. Problemas metabólicos como la diabetes suelen estar asociados con alteraciones en la presión sanguínea.
+
+- **SkinThickness** → Grosor del pliegue cutáneo del tríceps. Se utiliza como una medida indirecta de la grasa corporal, que puede estar relacionada con problemas metabólicos.
+
+- **Insulin** → Nivel de insulina en sangre. La insulina es la hormona que regula la glucosa; alteraciones en su nivel pueden indicar problemas en el metabolismo del azúcar.
+
+- **BMI** → Índice de Masa Corporal (Body Mass Index). Es una medida que relaciona peso y altura y permite estimar si una persona tiene sobrepeso u obesidad, factores asociados con la diabetes.
+
+- **DiabetesPedigreeFunction** → Medida que representa la predisposición genética a la diabetes basada en el historial familiar.
+
+- **Age** → Edad del paciente. El riesgo de desarrollar diabetes suele aumentar con la edad.
+
+- **Outcome** → Indica si el paciente tiene diabetes (1) o no (0). Esta es la **variable objetivo** que el modelo intenta predecir.
+""")
+
 df = pd.read_csv("diabetes.csv")
 st.dataframe(df.head(10))
-st.dataframe(df.info())
-
 
 st.markdown("""
 Podemos observar que hay datos a 0 pero que es fisiológicamente imposible que lo estén. 
@@ -36,6 +55,3 @@ df['BMI'] = df['BMI'].fillna(df['BMI'].median())
 
 st.markdown("### Datos Limpios")
 st.dataframe(df.head(10))
-
-st.markdown("### Datos sobre el dataset")
-st.dataframe(df.describe().T)
