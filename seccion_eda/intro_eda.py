@@ -11,4 +11,4 @@ Limpiar los datos en caso de ruido, para que el modelo tenga datos relevantes
 """)
 
 df = pd.read_csv("diabetes.csv")
-df.head()
+st.dataframe(df.head())
