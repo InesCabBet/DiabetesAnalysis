@@ -22,12 +22,20 @@ Entiendo que son datos faltantes, es por ello que cambiaré dichos datos por la 
             1. Glucose 
             2. Insulin
             3. BMI
-            4. BloodPresure""")
+            4. BloodPresure
+            5. SkinThickness""")
 
 cols = ['Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI']
 df[cols] = df[cols].replace(0, np.nan)
 
-df[cols] = df.fillna(df[cols].median())
+df['Glucose'] = df['Glucose'].fillna(df['Glucose'].median())
+df['BloodPressure'] = df['BloodPressure'].fillna(df['BloodPressure'].median())
+df['SkinThickness'] = df['SkinThickness'].fillna(df['SkinThickness'].median())
+df['Insulin'] = df['Insulin'].fillna(df['Insulin'].median())
+df['BMI'] = df['BMI'].fillna(df['BMI'].median())
+
+st.markdown("### Datos Limpios")
+st.dataframe(df.head(10))
 
 st.markdown("### Datos sobre el dataset")
 st.dataframe(df.describe().T)
