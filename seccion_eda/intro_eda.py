@@ -38,10 +38,15 @@ st.dataframe(df.head(10))
 st.markdown("""
 Podemos observar que hay datos a 0 pero que es fisiológicamente imposible que lo estén. 
 Entiendo que son datos faltantes, es por ello que cambiaré dichos datos por la mediana en las columnas afectadas, que son:
-            1. Glucose 
+            
+            1. Glucose
+
             2. Insulin
+            
             3. BMI
+            
             4. BloodPresure
+            
             5. SkinThickness""")
 
 cols = ['Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI']
